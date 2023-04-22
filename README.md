@@ -1,12 +1,16 @@
 # Guia básico sobre Git
 
+Escritada adaptada do original https://github.com/SamuelHenn/guia-basico-git
+
+Recomenda-se também o curso https://www.udemy.com/course/git-e-github-para-iniciantes/
+
 ## O que é o Git
 
 O Git é um dos sistemas de **controle de versão** mais utilizados no mundo de desenvolvimento de software;
 
 Isso significa que qualquer desenvolvedor numa equipe pode gerenciar o código-fonte e seu histórico de mudanças;
 
-É gratuito e com o código fonte aberto;
+É software livre;
 
 
 ## Porque usar?
@@ -45,7 +49,7 @@ Podem ter custos;
 
 ### Windows
 
-- [Exe padrão para instalação](https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-64-bit.exe)
+- [Exe padrão para instalação](https://git-scm.com/download/win)
 
 
 ## Agora vamos ver as principais funções na prática
@@ -53,11 +57,11 @@ Podem ter custos;
 
 ### Criar um repositório
 
-* Crie uma conta no [GitLab](https://gitlab.com/users/sign_in)
+* Crie uma conta no [GitHub](https://github.com/)
 
 * Crie um projeto
 
-* Observação: É possível usar o Git apenas localmente na máquina, mas o normal é que fique hospedado em algum serviço.
+* Observação: É possível usar o versionamento apenas localmente na máquina, mas o normal é que fique hospedado em algum serviço.
 
 
 ### Clonar o repositório
@@ -65,7 +69,7 @@ Podem ter custos;
 
 Cria uma cópia de trabalho local do projeto;
 
-* Abra o terminal
+* Abra o terminal (caso esteja no Windows, pode ir até a pasta e clicar com o botão direito, aparecerá a opção de abrir o git bash na pasta)
 * Navegue até a pasta desejada
 ```bash
 	git clone URL_DO_REPOSITÓRIO
@@ -76,32 +80,13 @@ Configurar o usuário:
 - Nome: ```git config --global user.name "NOME"```
 - Email: ```git config --global user.email "EMAIL"```
 
+### Mão na massa
 
-### Criar uma branch de trabalho
-
-#### O que é uma branch
-
-Branch significa “ramo”, ou seja, uma ramificação do seu código;
-
-É usado para fazer modificações no código, sem afetar o código principal;
-
-Representação gráfica:
-![Branches](https://lh4.googleusercontent.com/hDZ7C2NQmOEeApDyPXFfjEfJyyIcmI8AfA8m-8loF8I2QKNrn4_Mw_IQKzoyj7O6SoKi2h6vTrKwZV5GL2uTJKSx_Kz8hSEpLAuhp7R_kpUYlW4H0oQbM34zo3fOZDtFU2PPtPr3)
-
-
-#### Comandos
-
-- Lista as branches existentes: ```git branch```
-
-- Criar uma nova branch: ```git checkout -b NOME_DA_BRANCH```
-
-- Mudar de branch: ```git checkout NOME_DA_BRANCH```
-
+- Crie um arquivo qualquer na pasta.
 
 ### Status
 
 - Lista os arquivos que foram modificados: ```git status```
-
 
 ### Add
 
@@ -134,6 +119,27 @@ Busca as atualizações do repositório para o ambiente local
 - Fazer o pull: ```git pull```
 
 
+### Branchs
+
+#### O que é uma branch
+
+Branch significa “ramo”, ou seja, uma ramificação do seu código;
+
+É usado para fazer modificações no código, sem afetar o código principal;
+
+Representação gráfica:
+![Branches](https://lh4.googleusercontent.com/hDZ7C2NQmOEeApDyPXFfjEfJyyIcmI8AfA8m-8loF8I2QKNrn4_Mw_IQKzoyj7O6SoKi2h6vTrKwZV5GL2uTJKSx_Kz8hSEpLAuhp7R_kpUYlW4H0oQbM34zo3fOZDtFU2PPtPr3)
+
+
+#### Comandos
+
+- Lista as branches existentes: ```git branch```
+
+- Criar uma nova branch: ```git checkout -b NOME_DA_BRANCH```
+
+- Mudar de branch: ```git checkout NOME_DA_BRANCH```
+
+
 ### Merge
 
 Une a branch atual com outra branch
@@ -164,6 +170,7 @@ Usado para versionar os projetos
 É um padrão que muitas empresas/projetos adotam, totalmente ou ao menos parciamente;
 
 Imagem que representa o fluxo:
+
 ![GitFlow](https://lh3.googleusercontent.com/70jaEZnESXQ6SssU5uI4yO62JBz6xq2sNrrz8bW_ap2CuWUaQlbKs3j6NyRJnvcvYwAugkW8WzNJX21dZ2SMd9O_1TTpKZT-FsBkYSPy4rUSpJSo2C-WPTaLc2jQ8ancyj1TetXQ)
 
 
