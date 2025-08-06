@@ -44,7 +44,7 @@ Podem ter custos;
 ### Linux 
 
 ```bash
-	sudo apt-get install git
+sudo apt-get install git
 ```
 
 ### Windows
@@ -52,7 +52,7 @@ Podem ter custos;
 - [Exe padrão para instalação](https://git-scm.com/download/win)
 
 
-## Agora vamos ver as principais funções na prática
+## Principais funções na prática
 
 
 ### Criar um repositório
@@ -72,7 +72,7 @@ Cria uma cópia de trabalho local do projeto;
 * Abra o terminal (caso esteja no Windows, pode ir até a pasta e clicar com o botão direito, aparecerá a opção de abrir o git bash na pasta)
 * Navegue até a pasta desejada
 ```bash
-	git clone URL_DO_REPOSITÓRIO
+git clone URL_DO_REPOSITÓRIO
 ```
 * Informe usuário e senha
 
@@ -118,6 +118,37 @@ Busca as atualizações do repositório para o ambiente local
 
 - Fazer o pull: ```git pull```
 
+### Outros comandos úteis
+
+Alguns comandos do Git que ajudam no dia a dia, especialmente para **desfazer**, **pausar** ou **investigar** alterações.
+
+#### Visualizar diferenças
+- `git diff` — mostra diferenças que ainda não foram adicionadas ao stage (`git add`).
+- `git diff --staged` — mostra diferenças que já estão no stage.
+
+#### Desfazer alterações
+- `git restore <arquivo>` — descarta mudanças no *working tree* (cópia de trabalho).
+- `git restore --staged <arquivo>` — remove o arquivo do stage, mas mantém as mudanças locais.
+- `git reset --soft HEAD~1` — volta um commit mantendo tudo no stage.
+- `git revert <hash>` — cria um commit que desfaz com segurança outro commit já publicado.
+
+#### Stash – guardar alterações temporariamente
+- `git stash` — salva alterações pendentes.
+- `git stash list` — lista stashes salvos.
+- `git stash show -p stash@{0}` — mostra o que há dentro do stash.
+- `git stash pop` — aplica e remove o stash do topo.
+- `git stash clear` — remove todos os stashes.
+
+#### Cherry-pick & Rebase (avançado)
+- `git cherry-pick <hash>` — aplica um commit específico na branch atual (também é útil para recuperar um arquivo de um commit ou branch específico).
+- `git rebase -i HEAD~N` — reescreve interativamente os últimos *N* commits (editar, reordenar, squash).
+
+#### Limpeza
+- `git clean -fd` — remove arquivos/diretórios não rastreados (**cuidado!**).
+- `git gc` — otimiza o repositório, removendo objetos órfãos.
+
+> 💡 `git help <comando>` ou `git <comando> --help` traz detalhes completos e exemplos adicionais.
+
 
 ### Branchs
 
@@ -135,9 +166,9 @@ Representação gráfica:
 
 - Lista as branches existentes: ```git branch```
 
-- Criar uma nova branch: ```git checkout -b NOME_DA_BRANCH```
+- Criar uma nova branch: ```git switch -b NOME_DA_BRANCH```
 
-- Mudar de branch: ```git checkout NOME_DA_BRANCH```
+- Mudar de branch: ```git switch NOME_DA_BRANCH```
 
 
 ### Merge
@@ -158,7 +189,6 @@ Usado para versionar os projetos
 - Criar tag: ```git tag -a vNUMERO -m "DESCRICAO"```
 
 - Envia a tag: ```git push origin vNUMERO```
-
 
 
 ## GitFlow
